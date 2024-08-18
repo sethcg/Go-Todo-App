@@ -1,0 +1,8 @@
+package components
+
+templ AddTodo() {
+    <form hx-post="/add-todo" hx-target="#todo-list">
+        <input type="text" name="text" required>
+        <button type="submit">Add Todo</button>
+    </form>
+}

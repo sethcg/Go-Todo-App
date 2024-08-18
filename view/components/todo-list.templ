@@ -1,0 +1,22 @@
+package components
+
+import (
+    "strconv"
+    "go-todo-app/model"
+)
+
+templ TodoList(todoArray []model.Todo) {
+    <div id="todo-list">
+        <ul>
+			for _, todo := range todoArray {
+				<li>
+                    <span>{ todo.Text }</span>
+                    <form hx-post="/remove-todo" hx-target="#todo-list">
+                        <input type="hidden" name="id" value={ strconv.Itoa(todo.ID) }>
+                        <button type="submit">Delete</button>
+                    </form>
+				</li>
+			}
+		</ul>
+    </div>
+}

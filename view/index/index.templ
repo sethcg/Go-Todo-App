@@ -1,0 +1,17 @@
+package index
+
+import (
+    "go-todo-app/model"
+    "go-todo-app/view/layout"
+    "go-todo-app/view/components"
+)
+
+templ Index(todoArray []model.Todo) {
+    @layout.Base() {
+        @components.AddTodo()
+
+        <div id="list-container">
+            @components.TodoList(todoArray)
+        </div>
+    }
+}
