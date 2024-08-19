@@ -31,25 +31,25 @@ func TodoList(todoArray []model.Todo) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"todo-list\"><ul>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"todo-list\" class=\"flex-1\"><ul role=\"list\" class=\"bg-[#44403c] py-2 border-2 border-[#0a0a0a] rounded-md\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, todo := range todoArray {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li><span>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li class=\"flex flex-row items-center justify-between gap-2 bg-[#78716c] m-2 p-2 rounded-lg\"><div class=\"text-[#0a0a0a] text-lg font-bold\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var2 string
 			templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(todo.Text)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `view/components/todo-list.templ`, Line: 13, Col: 37}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `view/components/todo-list.templ`, Line: 13, Col: 77}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span><form hx-post=\"/remove-todo\" hx-target=\"#todo-list\"><input type=\"hidden\" name=\"id\" value=\"")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><form hx-post=\"/remove-todo\" hx-target=\"#todo-list\" class=\"flex items-center\"><input type=\"hidden\" name=\"id\" value=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -62,7 +62,7 @@ func TodoList(todoArray []model.Todo) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"> <button type=\"submit\">Delete</button></form></li>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"> <button type=\"submit\"><div class=\"rounded-full p-1\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"2\" stroke=\"#171717\" class=\"size-6 hover:stroke-[#ef4444]\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z\"></path></svg></div></button></form></li>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

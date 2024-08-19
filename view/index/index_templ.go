@@ -44,11 +44,15 @@ func Index(todoArray []model.Todo) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"flex justify-center mt-4 m-2\"><h1 class=\"text-[#0a0a0a] text-[36px] font-bold\">TODO LIST</h1></div><div class=\"flex justify-center m-2\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
 			templ_7745c5c3_Err = components.AddTodo().Render(ctx, templ_7745c5c3_Buffer)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(" <div id=\"list-container\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div id=\"list-container\" class=\"grow flex justify-center m-2\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

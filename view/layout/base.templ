@@ -12,8 +12,10 @@ templ Base() {
         <script src="https://unpkg.com/htmx.org@1.9.5" integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="h-screen w-screen bg-[#1da1f2] flex justify-center items-center">
-            { children... }
+        <div class="h-screen w-screen bg-[#64748b] flex justify-center">
+            <div class="h-full flex flex-col justify-center max-w-96">
+                { children... }
+            </div>
         </div>
     </body>
     </html>

@@ -8,9 +8,15 @@ import (
 
 templ Index(todoArray []model.Todo) {
     @layout.Base() {
-        @components.AddTodo()
+        <div class="flex justify-center mt-4 m-2">
+            <h1 class="text-[#0a0a0a] text-[36px] font-bold">TODO LIST</h1>
+        </div>
 
-        <div id="list-container">
+        <div class="flex justify-center m-2">
+            @components.AddTodo()
+        </div>
+
+        <div id="list-container" class="grow flex justify-center m-2">
             @components.TodoList(todoArray)
         </div>
     }

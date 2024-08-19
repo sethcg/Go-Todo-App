@@ -26,7 +26,7 @@ func AddTodo() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<form hx-post=\"/add-todo\" hx-target=\"#todo-list\"><input type=\"text\" name=\"text\" required> <button type=\"submit\">Add Todo</button></form>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"bg-[#44403c] p-2 border-2 border-[#0a0a0a] rounded-md\"><form hx-post=\"/add-todo\" hx-target=\"#todo-list\" class=\"flex flex-row items-center justify-between gap-2\"><input type=\"text\" name=\"text\" class=\"p-1 rounded-md text-[#0a0a0a] text-lg font-normal\" required> <button type=\"submit\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"2\" stroke=\"#16a34a\" class=\"size-6 hover:stroke-[#22c55e]\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z\"></path></svg></button></form></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
